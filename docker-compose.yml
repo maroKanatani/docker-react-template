@@ -7,7 +7,8 @@ services:
     environment:
       - NODE_ENV=production
     volumes:
-    - ./:/usr/src/app
-    command: sh -c "cd sample-project && yarn install && yarn start"
+    - ./app:/usr/src/app
+    command: sh -c "yarn install && yarn start"
     ports:
     - "3000:3000"
+    working_dir: /usr/src/app
